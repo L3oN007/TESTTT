@@ -1,0 +1,23 @@
+.header-container span{
+    padding-right: 10%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border: 1px solid;
+}
+.header-container span h6{
+    padding-right: 1%;
+    border-right: 2px solid;
+}
+.header-img{
+    margin: 2px; 
+}
+.header-img img{
+    width: 50px;
+}
+.content-container {
+    margin-top: 35px;
+    display: flex;
+    background-color: rgba(221, 227, 227, 0.46);
+    justify-content: center;
+  }
