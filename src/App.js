@@ -30,8 +30,8 @@ import ConfirmBaoGiRequestCustomer from './component/khang-components/ConfirmBao
 import LayoutStaff from './shared/LayoutStaff'
 import LayoutCustomer from './shared/LayoutCustomer'
 
-function App () {
-  
+function App() {
+
   return (
     <div className='App'>
       <Header />
@@ -77,16 +77,16 @@ function App () {
         <Route path='/Blog_Biệt_Thự' element={<BlogVilla />} />{' '}
         <Route path='/Blog_Khách_Sạn' element={<BlogHotel />} />{' '}
         <Route path='/Blog_Nhà_Phố' element={<BlogTownHouse />} />{' '}
-        
+
+
 
 
         <Route path='/staff' element={<LayoutStaff />}>
           <Route path="" element={<Staff />} />
-          
         </Route>
 
 
-         {/* <Route path='/staff' element={<LayoutAdmin />}>
+        {/* <Route path='/staff' element={<LayoutAdmin />}>
           <Route path="" element={<Admin />} />
           <Route path="test" element={<TestPage />} />
         </Route> */}

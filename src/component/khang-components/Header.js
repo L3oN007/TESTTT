@@ -1,10 +1,19 @@
-import React from 'react'
-import logo from '../../assets/images/logo.jpg'
-import { Link } from 'react-router-dom'
-import bootstrap from 'bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-export default function Header () {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import logo from '../../assets/images/logo.jpg'
+import { useAuth } from '../dung-components/AuthContext'
+
+export default function Header() {
+  const { isLogin, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+  };
+
+
+
   return (
     <nav class='navbar navbar-expand-lg bg-light'>
       <div class='container-fluid home-page-header'>
@@ -106,12 +115,12 @@ export default function Header () {
                   </Link>
                 </li>
                 <li>
-                <Link className='dropdown-item Header-text' to={'/Thi_Công_nội_thất_văn_phòng'}>
+                  <Link className='dropdown-item Header-text' to={'/Thi_Công_nội_thất_văn_phòng'}>
                     Văn Phòng
                   </Link>
                 </li>
                 <li>
-                <Link className='dropdown-item Header-text' to={'/Thi_Công_nội_thất_biệt_thự'}>
+                  <Link className='dropdown-item Header-text' to={'/Thi_Công_nội_thất_biệt_thự'}>
                     Biệt Thự
                   </Link>
                 </li>
@@ -168,14 +177,6 @@ export default function Header () {
                 </li>
                 <li>
                   <Link
-                    to='/Confirm_Bao_Gia_Request_Customer'
-                    className='dropdown-item Header-text'
-                  >
-                    Confirm Báo Giá Customer
-                  </Link>
-                </li>
-                <li>
-                  <Link
                     to='/staff'
                     className='dropdown-item Header-text'
                   >
@@ -185,24 +186,20 @@ export default function Header () {
                 {/* <li><a class="dropdown-item Header-text" href="#">Thiết kế nội thất nhà phố</a></li>
             <li><a class="dropdown-item Header-text" href="#">Thiết kế nội thất biệt thự</a></li>
             <li><a class="dropdown-item Header-text" href="#">Thiết kế nội thất văn phòng</a></li> */}
-              <li>
-                  <Link
-                    to='/Admin'
-                    className='dropdown-item Header-text'
-                  >
-                    Admin
-                  </Link>
-                </li>
               </ul>
             </li>
             <li class='nav-item mx-3'>
-              <Link
-                to='/Đăng_nhập'
-                class='nav-link active Header-text'
-                href='#'
-              >
-                Đăng nhập
-              </Link>
+              {isLogin ? (
+                <button class='nav-link active Header-logout' onClick={handleLogout}>Đăng xuất</button>
+              ) : (
+                <Link
+                  to='/Đăng_nhập'
+                  class='nav-link active Header-text'
+                  href='#'
+                >
+                  Đăng nhập
+                </Link>
+              )}
             </li>
           </ul>
         </div>
