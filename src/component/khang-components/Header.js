@@ -4,6 +4,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/logo.jpg'
 import { useAuth } from '../dung-components/AuthContext'
+import { AutoCompleteSearch } from '../auto-complete-search/AutoCompleteSearch'
 
 export default function Header() {
   const { isLogin, logout } = useAuth();
@@ -15,7 +16,7 @@ export default function Header() {
 
 
   return (
-    <nav class='navbar navbar-expand-lg bg-light'>
+    <nav class='position-relative navbar navbar-expand-lg bg-light z-0'>
       <div class='container-fluid home-page-header'>
         <div className='Logo'>
           <Link to='/' className='navbar-brand'>
@@ -204,22 +205,9 @@ export default function Header() {
           </ul>
         </div>
         <div className='search'>
-          <form class='d-flex align-items-center' id='searchArea' role='search'>
-            <input
-              class='form-control'
-              id='searchForm'
-              type='search'
-              placeholder='Search'
-              aria-label='Search'
-            />
-            <button
-              class='btn btn-outline-success'
-              id='searchFormBtn'
-              type='submit'
-            >
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </button>
-          </form>
+          <AutoCompleteSearch/>
+          
+
         </div>
       </div>
     </nav>

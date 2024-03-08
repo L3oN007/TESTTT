@@ -1,0 +1,6 @@
+.hover-effect:hover {
+    width: 100%;
+    background-color: #e2e8f0;
+    cursor: pointer;
+    border-radius: 5%;
+}
