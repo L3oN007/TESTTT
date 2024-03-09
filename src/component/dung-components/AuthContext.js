@@ -21,6 +21,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = () => {
         localStorage.removeItem('isLogin'); // Remove login state from localStorage
+        localStorage.removeItem('userRole'); // Remove login state from localStorage
         setIsLogin(false);
         navigate('/Đăng_nhập');
     };
