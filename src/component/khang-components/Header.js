@@ -1,10 +1,9 @@
-import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/logo.jpg'
-import { useAuth } from '../dung-components/AuthContext'
 import { AutoCompleteSearch } from '../auto-complete-search/AutoCompleteSearch'
+import { useAuth } from '../dung-components/AuthContext'
+import bootstrap from 'bootstrap'
 
 export default function Header() {
   const { isLogin, logout } = useAuth();
@@ -205,8 +204,8 @@ export default function Header() {
           </ul>
         </div>
         <div className='search'>
-          <AutoCompleteSearch/>
-          
+          <AutoCompleteSearch />
+
 
         </div>
       </div>
