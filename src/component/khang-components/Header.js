@@ -15,11 +15,11 @@ export default function Header() {
 
 
   return (
-    <nav class='position-relative navbar navbar-expand-lg bg-light z-0'>
+    <nav class='position-relative navbar navbar-expand-lg bg-light '>
       <div class='container-fluid home-page-header'>
         <div className='Logo'>
           <Link to='/' className='navbar-brand'>
-            <img src={logo} />
+            <img src={logo} alt='logo' />
           </Link>
           {/* <a class="navbar-brand" href="#"><img src={logo}/></a> */}
         </div>
